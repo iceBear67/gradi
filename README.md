@@ -22,4 +22,4 @@ But Gradi won't. Gradi searches truly useless garbages and delete them in order 
 6. Global Cache: caches/jars-X (You'll have to re-download them, especially Android Developers) (DONE)
 7. Remove old dependencies that you never use. (WIP)
 
-Any of them are configurable and you can choose what you want to clean.
+Any of them are configurable and you can choose what you want to clean, but you will have to build by your self since you edited the code.
