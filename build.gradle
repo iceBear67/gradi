@@ -17,8 +17,6 @@ repositories {
 }
 dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
-
     compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 
@@ -35,6 +33,14 @@ java {
     targetCompatibility = javaVersion
     if (JavaVersion.current() < javaVersion) {
         toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+jar {
+    manifest {
+        attributes(Map.of(
+                "Main-Class", "io.ib67.gradi.GradiBoot",
+        ))
     }
 }
 /*
