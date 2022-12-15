@@ -5,7 +5,7 @@ Have you ever scared by how large is Gradle Caches?
 Even though Gradle Officials explains that Caches will be cleaned automatically, there are still many trashes didn't get
 cleaned or the automatic process never runs.
 
-But Gradi won't. Gradi searches truly useless garbages and delete them in order to free your disk space.
+But Gradi don't. Gradi searches truly useless garbages and delete them in order to free your disk space.
 
 # Plan
 
@@ -22,7 +22,7 @@ But Gradi won't. Gradi searches truly useless garbages and delete them in order 
 6. Global Cache: caches/jars-X (You'll have to re-download them, especially Android Developers) (DONE)
 7. Remove old dependencies that you never use. (WIP)
 
-Any of them are configurable and you can choose what you want to clean, but you will have to build by your self since you edited the code.
+All of them are configurable and you can choose what you want to clean, but you will have to build by your self since you edited the code.
 
 # Screenshots
 Before:  
