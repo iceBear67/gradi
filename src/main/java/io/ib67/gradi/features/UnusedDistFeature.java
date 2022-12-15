@@ -3,6 +3,7 @@ package io.ib67.gradi.features;
 import io.ib67.gradi.GradiFeature;
 import io.ib67.gradi.ProcessResult;
 import io.ib67.gradi.data.GradiContext;
+import io.ib67.gradi.util.PathUtil;
 
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -15,11 +16,11 @@ public class UnusedDistFeature implements GradiFeature {
     @Override
     public ProcessResult process(Path target, BasicFileAttributes attributes, GradiContext context) {
         if (attributes.isRegularFile()) {
-            if (PART.matcher(target.toAbsolutePath().toString()).find()) {
+            if (PART.matcher(PathUtil.toUnixPath(target.toAbsolutePath().toString())).find()) {
                 return ProcessResult.REMOVED;
             }
         } else if (attributes.isDirectory()) {
-            var matcher = DIST.matcher(target.toAbsolutePath().toString());
+            var matcher = DIST.matcher(PathUtil.toUnixPath(target.toAbsolutePath().toString()));
             if (matcher.find()) {
                 var gradleVersion = matcher.group(1);
                 var daemonPath = context.configuration().gradleHome().resolve("daemon").resolve(gradleVersion);

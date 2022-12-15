@@ -3,6 +3,7 @@ package io.ib67.gradi.features;
 import io.ib67.gradi.GradiFeature;
 import io.ib67.gradi.ProcessResult;
 import io.ib67.gradi.data.GradiContext;
+import io.ib67.gradi.util.PathUtil;
 import lombok.SneakyThrows;
 
 import java.nio.file.Path;
@@ -16,7 +17,7 @@ public class BuildScriptCacheFeature implements GradiFeature {
     @SneakyThrows
     public ProcessResult process(Path target, BasicFileAttributes attributes, GradiContext context) {
         if (attributes.isDirectory()) {
-            if (PATTERN.matcher(target.toAbsolutePath().toString()).find()) {
+            if (PATTERN.matcher(PathUtil.toUnixPath(target.toAbsolutePath().toString())).find()) {
                 System.out.println("[!!] Build Script Caches: " + target.toAbsolutePath());
                 return ProcessResult.REMOVED;
             }

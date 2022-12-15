@@ -3,6 +3,7 @@ package io.ib67.gradi.features;
 import io.ib67.gradi.GradiFeature;
 import io.ib67.gradi.ProcessResult;
 import io.ib67.gradi.data.GradiContext;
+import io.ib67.gradi.util.PathUtil;
 
 import java.nio.file.Path;
 import java.nio.file.attribute.BasicFileAttributes;
@@ -14,7 +15,7 @@ public class DistBackupFeature implements GradiFeature {
     @Override
     public ProcessResult process(Path target, BasicFileAttributes attributes, GradiContext context) {
         if (attributes.isRegularFile()) {
-            if (DIST.matcher(target.toAbsolutePath().toString()).find()) {
+            if (DIST.matcher(PathUtil.toUnixPath(target.toAbsolutePath().toString())).find()) {
                 System.out.println("[!!] Dist Backup: " + target.toAbsolutePath());
                 return ProcessResult.REMOVED;
             }

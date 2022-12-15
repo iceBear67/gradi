@@ -2,6 +2,7 @@ package io.ib67.gradi;
 
 import io.ib67.gradi.data.GradiConfiguration;
 import io.ib67.gradi.data.GradiContext;
+import io.ib67.gradi.util.PathUtil;
 import lombok.Getter;
 import lombok.SneakyThrows;
 
@@ -39,7 +40,7 @@ public final class Gradi {
             Files.walkFileTree(projHome, new GradiFileVisitor((path, attributes) -> {
                 if (attributes.isRegularFile() && path.getFileName().toString().equals("gc.properties")) {
                     // read ti.
-                    var matcher = GRADLE_VERSION_PATTERN.matcher(path.toString());
+                    var matcher = GRADLE_VERSION_PATTERN.matcher(PathUtil.toUnixPath(path.toString()));
                     if (!matcher.find()) {
                         return FileVisitResult.CONTINUE;
                     }
