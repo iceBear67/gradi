@@ -16,7 +16,7 @@ repositories {
     mavenCentral()
 }
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     compileOnly 'org.jetbrains:annotations:23.0.0'
 }
 
