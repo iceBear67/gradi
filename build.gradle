@@ -4,7 +4,7 @@ import java.time.Instant
 
 plugins {
     id 'java'
-    id "com.github.johnrengelman.shadow" version "7.1.2"
+    id "com.github.johnrengelman.shadow" version "8.1.0"
     id 'java-library'
     id 'io.franzbecker.gradle-lombok' version '5.0.0'
 }
