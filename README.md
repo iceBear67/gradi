@@ -5,7 +5,7 @@ Have you ever scared by how large is Gradle Caches?
 Even though Gradle Officials explains that Caches will be cleaned automatically, there are still many trashes didn't get
 cleaned or the automatic process never runs.
 
-But Gradi don't. Gradi searches truly useless garbages and delete them in order to free your disk space.
+But Gradi won't. Gradi searches truly useless garbages and delete them in order to free your disk space.
 
 # Plan
 
